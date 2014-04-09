@@ -1,0 +1,33 @@
+<div class="container" >
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h3 style="margin: 10px 0 10px 0"><span class="glyphicon glyphicon-play-circle"></span> <%= @event[:title] %></h3></div>
+  <div class="panel-body">
+    <p class="lead">
+        <span class="glyphicon glyphicon-user"></span> <%= @event[:author] %> &nbsp;&nbsp;&nbsp;
+        <span class="glyphicon glyphicon-time"></span> <%= @event[:start_time].strftime("%d/%m %H:%M") + " - " +@event[:end_time].strftime("%H:%M")%> &nbsp;&nbsp;&nbsp;
+        <span class="glyphicon glyphicon-home"></span> <%= @event[:room] %> &nbsp;&nbsp;&nbsp;
+        <span class="glyphicon glyphicon-globe"></span> <a href="https://twitter.com/intent/tweet?text=<%= "%23#{EVENT_HASHTAG}+%23#{@hashtag}+%23green%7C%23yellow%7C%23red" %>">#<%= @hashtag %></a> &nbsp;&nbsp;&nbsp;
+    </p>
+    <div class="progress" style="height: 50px">
+        <div class="progress-bar progress-bar-success" id="bargreen" style="width: <%= (@green.to_f/@votes.to_f*100).to_s %>%">
+        </div>
+        <div class="progress-bar progress-bar-warning" id="baryellow" style="width: <%= (@yellow.to_f/@votes.to_f*100).to_s %>%">
+        </div>
+        <div class="progress-bar progress-bar-danger" id="barred" style="width: <%= (@red.to_f/@votes.to_f*100).to_s %>%">
+        </div>
+    </div>
+
+    <p class="lead">
+        <span class="label label-success" id="greenvotes"><%= @green %></span> &nbsp;+&nbsp;
+        <span class="label label-warning" id="yellowvotes"><%= @yellow %></span> &nbsp;+&nbsp;
+        <span class="label label-danger" id="redvotes"><%= @red %></span> &nbsp;=&nbsp;
+        <span class="label label-info" id="totalvotes"><%= @votes %></span>
+    </p>
+    
+  </div>
+
+</div>
+
+</div>

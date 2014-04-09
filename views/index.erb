@@ -1,0 +1,23 @@
+<div class="container" >
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Events</div>
+
+  <!-- Table -->
+  <table class="table">
+    <% @agenda.each do |talk| %>
+    <tr>
+        <td><a href="/event/<%= talk[1][:hashtag] %>"><%= talk[1][:title] %></a></td>
+        <td><%= talk[1][:author] %></td>
+        <td><a href="https://twitter.com/intent/tweet?text=<%= "%23#{EVENT_HASHTAG}+%23#{talk[1][:hashtag]}+%23green%7C%23yellow%7C%23red" %>">
+            #<%= talk[1][:hashtag] %></a>
+        </td>
+        <td><%= talk[1][:start_time].strftime("%d/%m %H:%M") + " - " +talk[1][:end_time].strftime("%H:%M")%></td>
+        <td><%= talk[1][:room] %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+</div>

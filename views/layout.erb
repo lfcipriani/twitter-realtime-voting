@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter Voting</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="padding-top:60px;">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Twitter Voting</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+  
+    <div class="container">
+        <h3 style="margin-bottom: 20px;">
+            <span class="label label-info" id="twtcount"><%= @twtcount.to_s %></span> tweets &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="label label-info" id="rttcount"><%= @rttcount.to_s %></span> retweets &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="label label-info" id="votcount"><%= @votcount.to_s %></span> votes &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="label label-info" id="tlkcount"><%= @agenda.size.to_s %></span> events
+        </h3>
+    </div>
+
+    <%= yield %>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
