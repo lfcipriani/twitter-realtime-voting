@@ -1,10 +1,10 @@
-#Twitter voting
+# Twitter voting
 
 This is a real time voting engine that allow conference attendants to review a talk via Twitter.
 
 This sample code was created for QCon São Paulo 2014.
 
-##Technologies used
+## Technologies used
 
 * Twitter Streaming API and tweetstream gem
 * ruby 2.x
@@ -13,7 +13,7 @@ This sample code was created for QCon São Paulo 2014.
 * redis (storage)
 * jQuery and Bootstrap (frontend)
 
-##Installing and running
+## Installing and running
 
 1. Clone this repo
 2. Set up your Twitter credentials in `config/credentials.yml` with your app tokens obtained at apps.twitter.com (see `config/credentials.yml.sample`)
@@ -32,7 +32,7 @@ Try to vote to a talk while having it's permalink page open.
 
 Have fun!
 
-##Contributions 
+## Contributions 
 
 This is a demo app, so if you are thinking to use in production, please review and test this code properly.
 
